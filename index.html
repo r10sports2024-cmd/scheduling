@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="description" content="Vila — encontre serviços perto de você e reserve um horário." />
+  <title>Vila · Serviços perto de você</title>
+  <link rel="icon" type="image/png" href="assets/logo-scheduling-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.6 12 3l9 7.6"/><path d="M5.5 9.4V20h13V9.4"/><path d="M9.5 20v-6.2h5V20"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 6-2 7-2 7h16s-2-1-2-7"/><path d="M10 19a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.6 6.2.9-4.5 4.4 1 6.1-5.5-2.9-5.5 2.9 1-6.1L3 9.5l6.2-.9L12 3Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.7 4.6L18 9.3l-4.3 1.7L12 15.6l-1.7-4.6L6 9.3l4.3-1.7L12 3Z"/><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m9 7-5 5 5 5M15 7l5 5-5 5M13 4l-2 16"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.4 8.6c0 4.2-8.4 10-8.4 10s-8.4-5.8-8.4-10a4.6 4.6 0 0 1 8.4-2.6 4.6 4.6 0 0 1 8.4 2.6Z"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1.5a2 2 0 0 0 1.4-3.4 2 2 0 0 1 1.4-3.4H19a2 2 0 0 0 2-2A9 9 0 0 0 12 3Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="15" cy="8" r="1"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 12h18"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M8 7h7M8 11h5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5L21 9l-3-3 2-2-2.5-1.5-3 4Z"/><path d="M9.5 17.5a4 4 0 0 1-5-5L3 15l3 3-2 2 2.5 1.5 3-4Z"/><path d="m6 18 12-12"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4l11-11-4-4L4 16v4Z"/><path d="m14 6 4 4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-.9.7-1.5 1.2-1.5 2.5"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2 6"/><path d="M20 4v7h-7"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2.5"/><path d="M3 10h18M16 15h2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 19a6.5 6.5 0 0 1 13 0"/><path d="M16 5.5a3.5 3.5 0 0 1 0 7M17 14a6 6 0 0 1 4.5 5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></symbol>
+  </svg>
+
+  <div class="stage">
+    <aside class="brand-panel">
+      <div class="brand-top">
+        <img class="brand-logo-img" src="assets/logo-scheduling.webp" alt="scheduling" width="1413" height="340" />
+        <span class="mono brand-kicker">SERVIÇOS PERTO DE VOCÊ</span>
+      </div>
+      <h1>Encontre. Reserve.<br /><em>Resolva.</em></h1>
+      <p class="brand-lead">Um aplicativo simples para descobrir serviços locais, ver horários e agendar em segundos.</p>
+      <div class="brand-foot mono">DEMONSTRAÇÃO INTERATIVA · DADOS SIMULADOS</div>
+    </aside>
+
+    <div class="device" id="device">
+      <div class="statusbar" aria-hidden="true">
+        <span id="clock">19:02</span>
+        <div class="island"></div>
+        <span class="status-icons"><i class="sig"></i><i class="wifi"></i><i class="batt"></i></span>
+      </div>
+
+      <div class="screen-host" id="screenHost">
+
+        <!-- HOME -->
+        <section class="screen active" data-screen="home">
+          <div class="appbar">
+            <img class="appbar-logo" src="assets/logo-scheduling.webp" alt="scheduling" width="1413" height="340" />
+            <button class="icon-btn" data-go="notifications" type="button" aria-label="Notificações"><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg><i class="dot" id="notifDot"></i></button>
+          </div>
+          <div class="screen-body">
+            <div class="hero-card">
+              <span class="hero-eyebrow mono" id="homeSummary">26 serviços · 14 empresas</span>
+              <h2>O que você precisa hoje?</h2>
+              <p>Encontre um profissional, veja os horários e reserve em segundos.</p>
+              <button class="btn btn-primary" data-tab="explore" type="button">Explorar serviços <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+
+            <div class="section-head"><h3>Próximo atendimento</h3><button class="link" data-tab="bookings" type="button">Ver agenda</button></div>
+            <div id="homeNext"></div>
+
+            <div class="section-head"><h3>Categorias</h3><button class="link" data-tab="explore" type="button">Ver todas</button></div>
+            <div class="category-scroll" id="homeCategories"></div>
+
+            <div class="section-head"><h3>Mais procurados</h3></div>
+            <div class="card-list" id="homeFeatured"></div>
+          </div>
+        </section>
+
+        <!-- EXPLORE -->
+        <section class="screen" data-screen="explore">
+          <div class="appbar appbar--plain">
+            <div><small class="appbar-kicker mono">VILA</small><h2 class="appbar-title">Explorar serviços</h2></div>
+            <button class="icon-btn" data-go="notifications" type="button" aria-label="Notificações"><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg><i class="dot" id="notifDot2"></i></button>
+          </div>
+          <div class="screen-body">
+            <label class="searchbar"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><input id="exploreSearch" type="search" placeholder="Buscar serviço, empresa ou profissional" autocomplete="off" aria-label="Buscar serviços" /></label>
+            <div class="segmented" id="exploreSegment" role="tablist" aria-label="Tipo de serviço">
+              <button class="seg active" data-mine="false" type="button" role="tab">Todos</button>
+              <button class="seg" data-mine="true" type="button" role="tab">Meus serviços</button>
+            </div>
+            <div class="chips" id="exploreChips"></div>
+            <div class="result-label mono" id="exploreCount">15 RESULTADOS</div>
+            <div class="card-list" id="exploreResults"></div>
+          </div>
+        </section>
+
+        <!-- DETAIL -->
+        <section class="screen" data-screen="detail">
+          <div class="appbar appbar--back">
+            <button class="back-btn" data-back type="button" aria-label="Voltar"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
+            <span class="appbar-title">Detalhes do serviço</span>
+          </div>
+          <div class="screen-body" id="detailBody"></div>
+          <div class="screen-footer" id="detailFooter"></div>
+        </section>
+
+        <!-- BOOKING -->
+        <section class="screen" data-screen="booking">
+          <div class="appbar appbar--back">
+            <button class="back-btn" data-back type="button" aria-label="Voltar"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
+            <span class="appbar-title">Agendar atendimento</span>
+          </div>
+          <div class="screen-body" id="bookingBody"></div>
+          <div class="screen-footer"><button class="btn btn-primary btn-block" id="confirmBookingBtn" type="button" disabled>Confirmar agendamento</button></div>
+        </section>
+
+        <!-- SUCCESS -->
+        <section class="screen" data-screen="success">
+          <div class="screen-body center-body" id="successBody"></div>
+        </section>
+
+        <!-- BOOKINGS -->
+        <section class="screen" data-screen="bookings">
+          <div class="appbar appbar--plain">
+            <div><small class="appbar-kicker mono">SUA PROGRAMAÇÃO</small><h2 class="appbar-title">Minha agenda</h2></div>
+            <span class="count-pill" id="bookingsCount">0</span>
+          </div>
+          <div class="screen-body">
+            <div class="segmented" id="bookingSegment" role="tablist" aria-label="Status dos agendamentos">
+              <button class="seg active" data-status="upcoming" type="button" role="tab">Próximos</button>
+              <button class="seg" data-status="past" type="button" role="tab">Histórico</button>
+            </div>
+            <div id="bookingsList"></div>
+          </div>
+        </section>
+
+        <!-- CREATE -->
+        <section class="screen" data-screen="create">
+          <div class="appbar appbar--back">
+            <button class="back-btn" id="createBack" type="button" aria-label="Voltar"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
+            <span class="appbar-title">Cadastrar serviço</span>
+          </div>
+          <div class="step-progress"><i id="createProgress"></i></div>
+          <div class="screen-body" id="createBody"></div>
+          <div class="screen-footer" id="createFooter"></div>
+        </section>
+
+        <!-- PROFILE -->
+        <section class="screen" data-screen="profile">
+          <div class="appbar appbar--plain">
+            <div><small class="appbar-kicker mono">MINHA CONTA</small><h2 class="appbar-title">Perfil</h2></div>
+            <button class="icon-btn" data-go="notifications" type="button" aria-label="Notificações"><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg><i class="dot" id="notifDot3"></i></button>
+          </div>
+          <div class="screen-body" id="profileBody"></div>
+        </section>
+
+        <!-- NOTIFICATIONS -->
+        <section class="screen" data-screen="notifications">
+          <div class="appbar appbar--back">
+            <button class="back-btn" data-back type="button" aria-label="Voltar"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
+            <span class="appbar-title">Notificações</span>
+            <button class="text-btn" id="markRead" type="button">Ler todas</button>
+          </div>
+          <div class="screen-body" id="notificationsBody"></div>
+        </section>
+
+        <!-- HELP -->
+        <section class="screen" data-screen="help">
+          <div class="appbar appbar--back">
+            <button class="back-btn" data-back type="button" aria-label="Voltar"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
+            <span class="appbar-title">Central de ajuda</span>
+          </div>
+          <div class="screen-body">
+            <div class="help-hero"><span class="help-ic"><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg></span><h3>Como podemos ajudar?</h3><p>Respostas rápidas para as dúvidas mais comuns sobre o app.</p></div>
+            <div class="faq">
+              <details open><summary>Como faço para agendar um horário?</summary><p>Abra um serviço em Explorar, toque em “Escolher horário”, selecione o dia e o horário desejado e confirme com seu nome e telefone.</p></details>
+              <details><summary>Posso cancelar um agendamento?</summary><p>Sim. Vá em Minha agenda, encontre o atendimento e toque em “Cancelar”. A vaga volta a ficar disponível na hora.</p></details>
+              <details><summary>Como cadastro um serviço?</summary><p>Toque no botão “+” na barra inferior, preencha os dados do serviço, escolha os dias e horários e publique. Ele aparecerá em “Meus serviços”.</p></details>
+              <details><summary>Preciso de internet para usar o app?</summary><p>Esta é uma demonstração local. Seus agendamentos e serviços ficam salvos neste navegador, sem precisar de conexão ou conta.</p></details>
+              <details><summary>O código de confirmação serve para quê?</summary><p>Apresente o código ao profissional no dia do atendimento. Você também pode copiá-lo na tela de confirmação.</p></details>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <nav class="tabbar" id="tabbar" aria-label="Navegação principal">
+        <button class="tab active" data-tab="home" type="button"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span>Início</span></button>
+        <button class="tab" data-tab="explore" type="button"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg><span>Explorar</span></button>
+        <button class="tab tab-add" data-go="create" type="button" aria-label="Cadastrar serviço"><span class="add-circle"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
+        <button class="tab" data-tab="bookings" type="button"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg><span>Agenda</span><i class="tab-badge" id="tabBadge" role="status" aria-atomic="true" hidden><span class="sr-only" id="tabBadgeText"></span></i></button>
+        <button class="tab" data-tab="profile" type="button"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg><span>Perfil</span></button>
+      </nav>
+
+      <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+      <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+      <div class="confirm-sheet" id="confirmSheet" hidden>
+        <div class="sheet-handle"></div>
+        <h3 id="confirmTitle">Tem certeza?</h3>
+        <p id="confirmMessage"></p>
+        <div class="sheet-actions"><button class="btn btn-quiet" id="confirmCancel" type="button">Cancelar</button><button class="btn btn-danger" id="confirmOk" type="button">Confirmar</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
