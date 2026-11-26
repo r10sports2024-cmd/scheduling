@@ -1,5 +1,5 @@
 /* ============================================================
-   VILA — app de serviços locais e agendamentos (demonstração)
+   AGENDA FÁCIL — app de serviços locais e agendamentos (demonstração)
    ============================================================ */
 
 const CATEGORIES = {
@@ -200,7 +200,7 @@ function code6() {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let out = "";
   for (let i = 0; i < 4; i++) out += chars[Math.floor(Math.random() * chars.length)];
-  return `VILA-${out}`;
+  return `AF-${out}`;
 }
 function isSlotBooked(serviceId, date, time) {
   return state.bookings.some((b) => b.serviceId === serviceId && b.date === date && b.time === time);
@@ -636,13 +636,13 @@ function downloadICS(b) {
   const start = new Date(`${b.date}T${b.time}:00`);
   const end = new Date(start.getTime() + b.duration * 60000);
   const fmt = (d) => `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}T${String(d.getHours()).padStart(2, "0")}${String(d.getMinutes()).padStart(2, "0")}00`;
-  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//VILA//Agendamentos//PT", "BEGIN:VEVENT",
-    `UID:${b.code}@vila.local`, `DTSTAMP:${fmt(new Date())}`, `DTSTART:${fmt(start)}`, `DTEND:${fmt(end)}`,
+  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Agenda Facil//Agendamentos//PT", "BEGIN:VEVENT",
+    `UID:${b.code}@agendafacil.local`, `DTSTAMP:${fmt(new Date())}`, `DTSTART:${fmt(start)}`, `DTEND:${fmt(end)}`,
     `SUMMARY:${b.sessionTitle} - ${b.company}`, `LOCATION:${b.location}`, `DESCRIPTION:Código ${b.code}. ${b.provider}.`, "END:VEVENT", "END:VCALENDAR"];
   const blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  a.href = url; a.download = `vila-${b.code}.ics`; a.click();
+  a.href = url; a.download = `agenda-facil-${b.code}.ics`; a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   toast("Arquivo gerado", "O evento foi salvo para abrir no seu calendário.", "ok");
 }
@@ -763,7 +763,7 @@ function renderProfile() {
     <div class="profile-hero">
       <div class="big-avatar">${esc(initials(state.user.name))}</div>
       <h2>${esc(state.user.name)}</h2>
-      <p>${esc(state.user.bairro)} · cliente Vila</p>
+      <p>${esc(state.user.bairro)} · cliente Agenda Fácil</p>
       <button class="btn btn-quiet" type="button" data-action="edit-profile">${icon("i-edit")} ${state.editProfile ? "Fechar edição" : "Editar perfil"}</button>
     </div>
     ${state.editProfile ? `<div class="profile-edit form-grid">
@@ -811,7 +811,7 @@ function saveProfile() {
 
 function renderNotifications() {
   const items = [
-    { icon:"i-sparkles", tone:"", title:"Bem-vindo ao Vila", text:"Explore serviços perto de você, reserve horários e cadastre o seu próprio atendimento.", time:"HOJE" },
+    { icon:"i-sparkles", tone:"", title:"Bem-vindo à Agenda Fácil", text:"Explore serviços perto de você, reserve horários e cadastre o seu próprio atendimento.", time:"HOJE" },
     ...sortedBookings().map((b) => ({ icon:"i-calendar", tone:"", title:"Atendimento confirmado", text:`${b.sessionTitle} · ${longDate(b.date)} às ${b.time}. Código ${b.code}.`, time:"AGENDADO" })),
     ...state.myServices.map((s) => ({ icon:"i-briefcase", tone:"amber", title:"Seu serviço está no ar", text:`“${s.title}” já pode ser encontrado em Meus serviços.`, time:"PUBLICADO" }))
   ];
